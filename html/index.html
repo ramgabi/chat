@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <title>Test</title>
+ <meta name="robots" content="noindex, nofollow" />
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="author" content="" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="stylesheet" href="css/main.css"/>
+ <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <aside class="tab-menu">
+            <ul class="menu-contents">
+                <li class="menu-contents-li on">
+                    <!-- 설정 관련 내용 -->
+                </li>
+                <li class="menu-contents-li">
+                    <!-- 멤버 관련 내용 -->
+                </li>
+            </ul>
+            <div class="profile">
+                <label for="user-name" class="skip">이름</label>
+                <input type="text" id="user-name" class="user-name" maxlength="6" size="1" value="USER" disabled="disabled"/>
+                <button type="button" class="edit-name">수정</button>
+                <span class="job">???</span>
+            </div>
+        </aside>
+        <div class="container">
+            <header class="state">
+                <p class="total"><span class="now-num">5</span>명 접속중</p>
+                <button type="button" class="game-start" disabled="">시작</button>
+            </header>
+            <section class="chat-wrap">
+                <ul class="chat-list">
+                    <li class="chat others">
+                        안녕하세요.
+                    </li>
+                    <li class="chat me">
+                        안녕하세요!
+                    </li>
+                    <li class="chat me">
+                        랄랄라
+                    </li>
+                </ul>
+                <form method="POST" action="#" name="chat-frm">
+                    <label for="chatting" class="skip">채팅입력</label>
+                    <input type="text" id="chatting" class="chat-input"/>
+                </form> 
+            </section>
+        </div>
+    </div>
+</body>
+</html>
