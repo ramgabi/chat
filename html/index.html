@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
- <meta charset="utf-8" />
- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
- <title>Test</title>
- <meta name="robots" content="noindex, nofollow" />
- <meta name="keywords" content="" />
- <meta name="description" content="" />
- <meta name="author" content="" />
- <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <link rel="stylesheet" href="css/main.css"/>
- <script src="js/main.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Test</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
 </head>
+
 <body>
     <div id="wrapper">
         <aside class="tab-menu">
-            <ul class="menu-contents">
-                <li class="menu-contents-li on">
-                    <!-- 설정 관련 내용 -->
+            <ul class="user-list">
+                <li class="user-list-li">
+                    <span class="chat-profile-img"></span>
+                    <span class="chat-profile">유저1</span>
                 </li>
-                <li class="menu-contents-li">
-                    <!-- 멤버 관련 내용 -->
+                <li class="user-list-li">
+                    <span class="chat-profile-img"></span>
+                    <span class="chat-profile">유저1</span>
+                </li>
+                <li class="user-list-li">
+                    <span class="chat-profile-img"></span>
+                    <span class="chat-profile">유저1</span>
                 </li>
             </ul>
+            <div class="game-zone">
+                <ul class="hint-wrap">
+                    <li class="hint-round">
+                        1 round
+                        <ul class="hint-list">
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hint-round">
+                        2 round
+                        <ul class="hint-list">
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hint-round">
+                        3 round
+                        <ul class="hint-list">
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                            <li class="hint">
+                                <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                                <p class="hint-txt">귤귤귤</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form action="#" method="POST" name="game-frm">
+                    <input type="text" title="단어입력" placeholder="단어를 입력하세요" class="input-word"/>
+                    <button type="submit" class="word-btn">확인</button>
+                </form>
+            </div>
             <div class="profile">
                 <label for="user-name" class="skip">이름</label>
-                <input type="text" id="user-name" class="user-name" maxlength="6" size="1" value="USER" disabled="disabled"/>
+                <input type="text" id="user-name" class="user-name" maxlength="6" size="1" value="USER"
+                    disabled="disabled" />
                 <button type="button" class="edit-name">수정</button>
                 <span class="job">???</span>
             </div>
@@ -39,21 +109,26 @@
             <section class="chat-wrap">
                 <ul class="chat-list">
                     <li class="chat others">
-                        안녕하세요.
+                        <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                        <p class="chat-txt">안녕하세요.</p>
                     </li>
                     <li class="chat me">
-                        안녕하세요!
+                        <span class="chat-profile">유저1</span>
+                        <p class="chat-txt">랄랄라</p>
                     </li>
-                    <li class="chat me">
-                        랄랄라
+                    <li class="chat others">
+                        <span class="chat-profile-img"></span><span class="chat-profile">유저1</span>
+                        <p class="chat-txt">안녕하세요!</p>
                     </li>
                 </ul>
-                <form method="POST" action="#" name="chat-frm">
+                <form method="get"" action="#" name="chat-frm" class="chat-frm">
                     <label for="chatting" class="skip">채팅입력</label>
-                    <input type="text" id="chatting" class="chat-input"/>
-                </form> 
+                    <input type="text" id="chatting" class="chat-input" placeholder="채팅을 입력하세요" 
+                    onKeypress="javascript:if(event.keyCode==13) {send()}"/>
+                </form>
             </section>
         </div>
     </div>
 </body>
+
 </html>
